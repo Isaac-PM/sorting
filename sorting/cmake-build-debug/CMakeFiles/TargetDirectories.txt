@@ -1,0 +1,3 @@
+C:/Users/Isaac PM/OneDrive/Universidad Nacional de Costa Rica/II C-2022/Estructuras de datos 50726/Projects/sorting/cmake-build-debug/CMakeFiles/insertion_sort.dir
+C:/Users/Isaac PM/OneDrive/Universidad Nacional de Costa Rica/II C-2022/Estructuras de datos 50726/Projects/sorting/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Isaac PM/OneDrive/Universidad Nacional de Costa Rica/II C-2022/Estructuras de datos 50726/Projects/sorting/cmake-build-debug/CMakeFiles/rebuild_cache.dir
