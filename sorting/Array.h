@@ -338,7 +338,7 @@ bool Array<T>::removeAtIndex(int index) {
         delete aux;
         arr[index] = nullptr;
         for (int i = index; i < objCounter; i++) {
-            if(i + 1 < size) arr[i] = arr[i + 1];
+            if(i + 1 < objCounter) arr[i] = arr[i + 1];
         }
         objCounter--;
         return true;
