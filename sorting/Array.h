@@ -79,11 +79,10 @@ void Array<T>::insertionSortReversed() { // Decreciente.
 
 template <class T>
 void Array<T>::bubbleSort() { // Creciente.
-    T *obj = nullptr;
-    for (int i = 0; i < objCounter; i++) {
-        for (int j = i + 1; j < objCounter; j++) {
-            if (*arr[j] <= *arr[i]) {
-                swap(i, j);
+    for (int i = 0; i < objCounter - 1; i++) {
+        for (int j = 0; j < objCounter - i - 1; j++) {
+            if (*arr[j] > *arr[j + 1]) {
+                swap(j, j + 1);
             }
         }
     }
@@ -91,10 +90,10 @@ void Array<T>::bubbleSort() { // Creciente.
 
 template <class T>
 void Array<T>::bubbleSortReversed() { // Decreciente.
-    for (int i = 0; i < objCounter; i++) {
-        for (int j = i + 1; j < objCounter; j++) {
-            if (*arr[j] >= *arr[i]) {
-                swap(i, j);
+    for (int i = 0; i < objCounter - 1; i++) {
+        for (int j = 0; j < objCounter - i - 1; j++) {
+            if (*arr[j] < *arr[j + 1]) {
+                swap(j, j + 1);
             }
         }
     }
