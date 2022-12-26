@@ -63,6 +63,7 @@ public:
     void pushBack(T*);
     void popBack();
     void resetTail();
+    ~List();
 
     // Sorting.
     void insertionSort();
@@ -199,43 +200,37 @@ void List<T>::swap(Node<T> *nodeA, Node<T> *nodeB) {
 }
 
 template <class T>
-void List<T>::bubbleSort() { // Creciente.
-    if (isEmpty()) return;
-    Node<T> *current;
-    Node<T> *aux = nullptr;
-    bool swapped = false;
+void List<T>::bubbleSort() {
+    if(isEmpty()) return;
+    bool swapped;
     do {
         swapped = false;
-        current = head;
-        while(current->getNext() != aux) {
+        Node<T>* current = head;
+        while(current->getNext() != nullptr) {
             if(*current->getData() > *current->getNext()->getData()) {
                 swap(current, current->getNext());
                 swapped = true;
             }
             current = current->getNext();
         }
-        aux = current;
     } while(swapped);
     resetTail();
 }
 
 template <class T>
-void List<T>::bubbleSortReversed() { // Decreciente.
+void List<T>::bubbleSortReversed() {
     if(isEmpty()) return;
-    Node<T> *current;
-    Node<T> *aux = nullptr;
-    bool swapped = false;
+    bool swapped;
     do {
         swapped = false;
-        current = head;
-        while(current->getNext() != aux) {
+        Node<T>* current = head;
+        while(current->getNext() != nullptr) {
             if(*current->getData() < *current->getNext()->getData()) {
                 swap(current, current->getNext());
                 swapped = true;
             }
             current = current->getNext();
         }
-        aux = current;
     } while(swapped);
     resetTail();
 }
@@ -421,6 +416,16 @@ template <class T>
 void List<T>::quickSortReversed() { // Decreciente.
     this->head = internalQuickSort(this->head, this->tail, 1);
     resetTail();
+}
+
+template <class T>
+List<T>::~List() {
+    Node<T>* current = head;
+    while(current != nullptr) {
+        Node<T>* aux = current;
+        current = current->getNext();
+        delete aux;
+    }
 }
 
 template <typename T>
